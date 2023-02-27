@@ -27,5 +27,7 @@ const (
 	// ProviderHuobi is the name for huobi provider.
 	ProviderHuobi = "huobi"
 	// ProviderHtsec is the name for htsec provider
-	ProviderHtsec = "htsec"
+	ProviderHtsec     = "htsec"
+	//ProviderCmbCredit is the name for cmb credit provider
+	ProviderCmbCredit = "cmbcredit"
 )

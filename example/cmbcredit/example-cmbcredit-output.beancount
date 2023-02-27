@@ -1,0 +1,91 @@
+option "title" "测试"
+option "operating_currency" "CNY"
+
+1970-01-01 open Assets:Bank:CN:CMB-6666:Savings
+1970-01-01 open Assets:FIXME
+1970-01-01 open Expenses:FIXME
+1970-01-01 open Expenses:Fee
+1970-01-01 open Expenses:Groceries
+1970-01-01 open Expenses:Subscription
+1970-01-01 open Liabilities:CreditCard:CmbCredit:9527
+
+2022-09-22 * "分期还款           004-012" "分期还款           004-012"
+	method: "9527"
+	orderId: "ABCDEFGHIJKLMN007"
+	payTime: "2022-09-22 20:15:10 +0000 CST"
+	postingDate: "20221223"
+	source: "招商银行信用卡"
+	txType: "其他"
+	Expenses:FIXME 1666.67 CNY
+	Liabilities:CreditCard:CmbCredit:9527 -1666.67 CNY
+
+2022-09-22 * "分期还款          分期手续费 004-012" "分期还款          分期手续费 004-012"
+	method: "9527"
+	orderId: "ABCDEFGHIJKLMN008"
+	payTime: "2022-09-22 20:15:10 +0000 CST"
+	postingDate: "20221223"
+	source: "招商银行信用卡"
+	txType: "分期"
+	Expenses:FIXME 33.00 CNY
+	Liabilities:CreditCard:CmbCredit:9527 -33.00 CNY
+
+2023-01-01 * "年费 300.00元" "年费 300.00元"
+	method: "9527"
+	orderId: "ABCDEFGHIJKLMN005"
+	payTime: "2023-01-01 00:00:00 +0000 CST"
+	postingDate: "20230101"
+	source: "招商银行信用卡"
+	txType: "其他"
+	Expenses:Fee 300.00 CNY
+	Liabilities:CreditCard:CmbCredit:9527 -300.00 CNY
+
+2023-01-01 * "刷卡 6次免年费 300.00元" "刷卡 6次免年费 300.00元"
+	method: "9527"
+	orderId: "ABCDEFGHIJKLMN006"
+	payTime: "2023-01-01 00:00:00 +0000 CST"
+	postingDate: "20230101"
+	source: "招商银行信用卡"
+	txType: "其他"
+	Liabilities:CreditCard:CmbCredit:9527 300.00 CNY
+	Expenses:Fee -300.00 CNY
+
+2023-01-04 * "掌上生活还款" "掌上生活还款"
+	method: "9527"
+	orderId: "ABCDEFGHIJKLMN004"
+	payTime: "2023-01-04 09:20:13 +0000 CST"
+	postingDate: "20230105"
+	source: "招商银行信用卡"
+	txType: "还款"
+	Liabilities:CreditCard:CmbCredit:9527 1984.88 CNY
+	Assets:Bank:CN:CMB-6666:Savings -1984.88 CNY
+
+2023-01-11 * "京东支付-网银在线（北京）科技有限公" "京东支付-网银在线（北京）科技有限公"
+	method: "9527"
+	orderId: "ABCDEFGHIJKLMN002"
+	payTime: "2023-01-11 10:31:59 +0000 CST"
+	postingDate: "20230115"
+	source: "招商银行信用卡"
+	txType: "其他"
+	Liabilities:CreditCard:CmbCredit:9527 338.80 CNY
+	Expenses:Groceries -338.80 CNY
+
+2023-01-18 * "PP*APPLE.COM/BILL         汇率 6.7989" "PP*APPLE.COM/BILL         汇率 6.7989"
+	method: "9527"
+	orderId: "ABCDEFGHIJKLMN001"
+	payTime: "2023-01-18 00:00:00 +0000 CST"
+	postingDate: "20230120"
+	source: "招商银行信用卡"
+	txType: "消费"
+	Expenses:Subscription 40.66 CNY
+	Liabilities:CreditCard:CmbCredit:9527 -40.66 CNY
+
+2023-01-18 * "京东支付-网银在线（北京）科技有限公" "京东支付-网银在线（北京）科技有限公"
+	method: "9527"
+	orderId: "ABCDEFGHIJKLMN003"
+	payTime: "2023-01-18 18:36:54 +0000 CST"
+	postingDate: "20230114"
+	source: "招商银行信用卡"
+	txType: "消费"
+	Expenses:Groceries 338.80 CNY
+	Liabilities:CreditCard:CmbCredit:9527 -338.80 CNY
+

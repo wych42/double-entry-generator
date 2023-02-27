@@ -1,0 +1,23 @@
+defaultMinusAccount: Assets:FIXME
+defaultPlusAccount: Expenses:FIXME
+defaultCurrency: CNY
+title: 测试
+cmbcredit:
+  rules:
+    # method 匹配卡号后4位，映射卡
+    - method: 9527
+      fullMatch: true
+      methodAccount: Liabilities:CreditCard:CmbCredit:9527
+
+    - item: APPLE.COM
+      targetAccount: Expenses:Subscription
+
+    - item: 京东支付
+      targetAccount: Expenses:Groceries
+
+    # 还款默认卡
+    - item: 掌上生活还款
+      targetAccount: Assets:Bank:CN:CMB-6666:Savings
+
+    - item: 年费
+      targetAccount: Expenses:Fee
